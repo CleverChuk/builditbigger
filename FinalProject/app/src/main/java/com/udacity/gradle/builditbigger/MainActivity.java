@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements RequestJokeTask.O
     public void tellJoke(View view) {
         progressBar.setVisibility(View.VISIBLE);
         mTask.cancel(true);
+        mTask = null;
+        mTask = new RequestJokeTask(this);
         mTask.execute();
     }
 
