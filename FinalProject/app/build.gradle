@@ -13,6 +13,7 @@ buildscript {
 android {
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
+
     defaultConfig {
         applicationId "com.udacity.gradle.builditbigger"
         minSdkVersion 16
@@ -46,7 +47,6 @@ dependencies {
     })
 
     testImplementation 'junit:junit:4.12'
-
     implementation project(':jokeprovider')
     implementation project(':showjokes')
 }

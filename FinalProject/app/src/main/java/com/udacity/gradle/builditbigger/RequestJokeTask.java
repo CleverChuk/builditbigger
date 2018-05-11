@@ -6,16 +6,17 @@ import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
-import com.udacity.gradle.builditbigger.backend.jokeApi.JokeApi;
+import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
 /**
+ * subclass of {@link AsyncTask}
  * Created by chuk on 5/10/18,at 19:17.
  */
 
 public class RequestJokeTask extends AsyncTask<Void,String,String> {
-    private static JokeApi jokeApi;
+    private static MyApi jokeApi;
     public interface OnRequestDone{
         void onComplete(String response);
         void onError(String error);
@@ -33,7 +34,7 @@ public class RequestJokeTask extends AsyncTask<Void,String,String> {
         try{
             return jokeApi.tellJoke().execute().getData();
         }catch (IOException e){
-            onProgressUpdate(e.getMessage());
+            publishProgress(e.getMessage());
         }
         return null;
     }
@@ -50,9 +51,9 @@ public class RequestJokeTask extends AsyncTask<Void,String,String> {
         mListener.onError(values[0]);
     }
 
-    private JokeApi buildApi(){
+    private MyApi buildApi(){
 
-        return new JokeApi.Builder(AndroidHttp.newCompatibleTransport(),new AndroidJsonFactory(),
+        return new MyApi.Builder(AndroidHttp.newCompatibleTransport(),new AndroidJsonFactory(),
                 null)
                 .setRootUrl("http://10.0.2.2:8080/_ah/api/")
                 .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
