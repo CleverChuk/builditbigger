@@ -1,0 +1,65 @@
+May 11, 2018 11:00:56 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+INFO: Overwriting system property key 'java.util.logging.config.file', value '/home/chuk/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/config/sdk/logging.properties' with value 'WEB-INF/logging.properties' from '/home/chuk/Desktop/repos/builditbigger/FinalProject/backend/build/exploded-backend/WEB-INF/appengine-web.xml'
+2018-05-11 23:00:57.180:INFO::main: Logging initialized @2516ms
+May 12, 2018 3:00:58 AM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
+WARNING: Your working directory, (/home/chuk/Desktop/repos/builditbigger/FinalProject) is not equal to your 
+web application root (/home/chuk/Desktop/repos/builditbigger/FinalProject/backend/build/exploded-backend)
+You will not be able to access files from your working directory on the production server.
+
+2018-05-11 23:00:58.989:INFO:oejs.Server:main: jetty-9.3.18.v20170406
+2018-05-11 23:01:04.747:INFO:oeja.AnnotationConfiguration:main: Scanning elapsed time=5194ms
+2018-05-11 23:01:05.625:INFO:oejsh.ContextHandler:main: Started c.g.a.t.d.j.DevAppEngineWebAppContext@2eea88a1{/,file:///home/chuk/Desktop/repos/builditbigger/FinalProject/backend/build/exploded-backend/,AVAILABLE}{/home/chuk/Desktop/repos/builditbigger/FinalProject/backend/build/exploded-backend}
+2018-05-11 23:01:05.635:INFO:oejs.AbstractConnector:main: Started NetworkTrafficSelectChannelConnector@9cb8225{HTTP/1.1,[http/1.1]}{localhost:8080}
+2018-05-11 23:01:05.636:INFO:oejs.Server:main: Started @10973ms
+May 12, 2018 3:01:05 AM com.google.appengine.tools.development.AbstractModule startup
+INFO: Module instance default is running at http://localhost:8080/
+May 12, 2018 3:01:05 AM com.google.appengine.tools.development.AbstractModule startup
+INFO: The admin console is running at http://localhost:8080/_ah/admin
+May 11, 2018 11:01:05 PM com.google.appengine.tools.development.DevAppServerImpl doStart
+INFO: Dev App Server is now running
+2018-05-11 23:01:19.904:WARN:oejs.ServletHandler:qtp1627960023-19: Error for /_ah/api/static/proxy.html
+java.lang.NoSuchMethodError: com.google.common.reflect.TypeToken.isSubtypeOf(Ljava/lang/reflect/Type;)Z
+	at com.google.api.server.spi.config.model.Types.getArrayItemType(Types.java:138)
+	at com.google.api.server.spi.config.model.Types.isArrayType(Types.java:44)
+	at com.google.api.server.spi.config.model.ApiParameterConfig.isRepeated(ApiParameterConfig.java:145)
+	at com.google.api.server.spi.config.model.ApiParameterConfig.getClassification(ApiParameterConfig.java:244)
+	at com.google.api.server.spi.config.model.ApiMethodConfig.addParameter(ApiMethodConfig.java:314)
+	at com.google.api.server.spi.config.annotationreader.ApiConfigAnnotationReader.readMethodRequestParameter(ApiConfigAnnotationReader.java:410)
+	at com.google.api.server.spi.config.annotationreader.ApiConfigAnnotationReader.readMethodRequestParameters(ApiConfigAnnotationReader.java:387)
+	at com.google.api.server.spi.config.annotationreader.ApiConfigAnnotationReader.readEndpointMethod(ApiConfigAnnotationReader.java:332)
+	at com.google.api.server.spi.config.annotationreader.ApiConfigAnnotationReader.readEndpointMethods(ApiConfigAnnotationReader.java:319)
+	at com.google.api.server.spi.config.annotationreader.ApiConfigAnnotationReader.loadEndpointMethods(ApiConfigAnnotationReader.java:85)
+	at com.google.api.server.spi.config.ApiConfigLoader.loadConfiguration(ApiConfigLoader.java:92)
+	at com.google.api.server.spi.SystemService.registerService(SystemService.java:185)
+	at com.google.api.server.spi.SystemService$Builder.build(SystemService.java:524)
+	at com.google.api.server.spi.EndpointsServlet.createSystemService(EndpointsServlet.java:130)
+	at com.google.api.server.spi.EndpointsServlet.init(EndpointsServlet.java:57)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:643)
+	at org.eclipse.jetty.servlet.ServletHolder.getServlet(ServletHolder.java:499)
+	at org.eclipse.jetty.servlet.ServletHolder.ensureInstance(ServletHolder.java:791)
+	at org.eclipse.jetty.servlet.ServletHolder.prepare(ServletHolder.java:776)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:579)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:524)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:226)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1180)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:512)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1112)
+	at com.google.appengine.tools.development.jetty9.DevAppEngineWebAppContext.doScope(DevAppEngineWebAppContext.java:94)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at com.google.appengine.tools.development.jetty9.JettyContainerService$ApiProxyHandler.handle(JettyContainerService.java:597)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:534)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:283)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:108)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Thread.java:745)
