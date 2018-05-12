@@ -85,5 +85,6 @@ public class MainActivity extends AppCompatActivity implements RequestJokeTask.O
     public void onError(String error) {
         Log.e("Error", error);
         progressBar.setVisibility(View.GONE);
+        countingIdlingResource.decrement();
     }
 }
